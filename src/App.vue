@@ -1,26 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+	<el-container>
+		<el-header><Nav /></el-header>
+		<el-main>
+			<Jumbotron />
+		</el-main>
+		<el-footer>
+			footer
+		</el-footer>
+	</el-container>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Nav from './components/Nav.vue'
+import Jumbotron from './components/Jumbotron.vue'
+
+// import NavCard from 'components/NavCard.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Nav,
+	Jumbotron
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus">
+@import './assets/stylus/base.styl'
+.el-header
+	background-color navBgColor
+.el-container .el-main
+	padding 0
 </style>
