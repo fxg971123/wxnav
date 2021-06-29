@@ -5,7 +5,7 @@
 		</el-header>
 		<el-main>
 			<Jumbotron />
-			<div class="cards-wrap">	
+			<div class="container">	
 				<div class="mb24" v-for="(item,index) in channel" :key="index" >
 					<NavCard :cardtitle="item.title" />
 				</div>				
@@ -58,13 +58,12 @@
 
 <style lang="stylus" scoped>
 	@import './assets/stylus/var.styl'
+	.el-container
+		background-color baseColor
 	.el-header
 		background-color navBgColor
 	.el-container .el-main
 		padding 0
-	.cards-wrap 
-		width 1200px
-		margin 0 auto
 	/deep/ .el-footer 
 		padding 10px 20px 0 
 		line-height 160% 

@@ -32,9 +32,6 @@
 
 <style lang="stylus" scoped>	
 	@import '../assets/stylus/var.styl'
-	.el-row
-		width 1200px
-		margin 0 auto
 	.topbar
 		display flex		
 		justify-content start

@@ -1,12 +1,28 @@
-@import "var.styl"
-*, *:before, *:after
+*
+	margin 0
+	padding 0
+
+*, *:before, *:after{
     box-sizing border-box
-
-body
-	color fontColor
-	background baseColor
-
-.mb10
+}
+.mb10{
 	margin-bottom 10px
+}
 .mb24
 	margin-bottom 24px
+
+.container
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	
+@media (min-width:768px){
+	.container{width:100%}
+}
+@media (min-width:992px){
+	.container{width:100%}
+}
+@media (min-width:1200px){
+	.container{max-width:1240px}
+}
