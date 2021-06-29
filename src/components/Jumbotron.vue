@@ -21,7 +21,7 @@
 
 <style lang="stylus" scoped>
 	.jumbotron
-		background url(../assets/imgs/bg-container.png) repeat-x
+		background url(../../public/images/bg-container.png) repeat-x
 		height 320px
 		width 100%
 		font-size 22px
@@ -52,19 +52,19 @@
 		.mountain-1
 			height 10.5em
 			z-index 3
-			background url(../assets/imgs/bg-mountain-1.png) repeat-x
+			background url(../../public/images/bg-mountain-1.png) repeat-x
 			background-size auto 50%
 			background-position 0 bottom
 		.mountain-2
 			height 10.5em
 			z-index 2
-			background url(../assets/imgs/bg-mountain-2.png) repeat-x
+			background url(../../public/images/bg-mountain-2.png) repeat-x
 			background-size auto 50%
 			background-position 0 bottom
 		.mountain-3
 			height 10.5em
 			z-index 1
-			background url(../assets/imgs/bg-mountain-3.png) repeat-x
+			background url(../../public/images/bg-mountain-3.png) repeat-x
 			background-size auto 30%
 			background-position 0 bottom
 	.scenes-ready #stage 
@@ -77,7 +77,7 @@
 		.mountain-2 {-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-animation:moving 160s linear 0.8s infinite normal none;-moz-animation:moving 160s linear 0.8s infinite normal none;animation:moving 160s linear 0.8s infinite normal none;}
 		.mountain-3 {-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-animation:moving 360s linear 0.8s infinite normal none;-moz-animation:moving 360s linear 0.8s infinite normal none;animation:moving 360s linear 0.8s infinite normal none;}
 		.space
-			background url(../assets/imgs/bg-space.png) repeat-x
+			background url(../../public/images/bg-space.png) repeat-x
 			width 3840px
 			height 100%
 			position absolute

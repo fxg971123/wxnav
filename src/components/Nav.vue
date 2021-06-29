@@ -3,11 +3,10 @@
 		<el-col :span="24">		
 			<div class="topbar">
 				<div class="topbar-logo">
-					<a href="/" class="logo"><img src="../assets/imgs/logo.png"></a>
+					<a href="/" class="logo"><img src="../../public/images/logo.png"></a>
 				</div>
-				<el-menu :default-active="activeIndex" class="el-menu-topnav" mode="horizontal">
-					<el-menu-item index="1">导航首页</el-menu-item>
-					<el-menu-item index="2">技术手册</el-menu-item>
+				<el-menu :default-active="activeIndex" class="el-menu-topnav" mode="horizontal">					
+					<el-menu-item v-for="(item,i) in channel" :key="i" :index="i">{{item.title}}{{i}}</el-menu-item>					
 				</el-menu>
 			</div>			
 		</el-col>
@@ -17,16 +16,22 @@
 <script>
 	export default {
 		name: "Nav",
+		props:{
+			channel:{
+				type:Array,
+				default:null
+			}
+		},
 		data() {
 			return {
-				activeIndex: '1'
+				activeIndex: '0'
 			}
 		}
 	}
 </script>
 
 <style lang="stylus" scoped>	
-	@import '../assets/stylus/base.styl'
+	@import '../assets/stylus/var.styl'
 	.el-row
 		width 1200px
 		margin 0 auto
@@ -37,7 +42,7 @@
 	.topbar-logo			
 		height 50px
 		width 50px
-		margin-right 8%
+		margin-right 4%
 		.logo
 			display block			
 			img
