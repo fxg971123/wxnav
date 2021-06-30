@@ -1,12 +1,16 @@
 <template>
-	<el-row>
+	<el-row class="container">
 		<el-col :span="24">		
 			<div class="topbar">
-				<div class="topbar-logo">
-					<a href="/" class="logo"><img src="../../public/images/logo.png"></a>
-				</div>
-				<el-menu :default-active="activeIndex" class="el-menu-topnav" mode="horizontal">					
-					<el-menu-item v-for="(item,i) in channel" :key="i" :index="i">{{item.title}}{{i}}</el-menu-item>					
+				<el-menu :default-active="activeIndex" class="el-menu-topnav" mode="horizontal">		
+					<el-menu-item class="topbar-logo" index="0"><img class="logoimg" src="../../public/images/logo.png"></el-menu-item>
+					<el-menu-item v-for="(item,key) in channel" :key="key" :index="item.index" >{{item.title}}</el-menu-item>
+					<el-submenu class="right-item" index="10" style="float: right;" v-if="screenWidth">
+						<template #title>
+							<i class="el-icon-s-fold" style="font-size:28px;color:#fff;"></i>
+						</template>
+						<el-menu-item :key="key" v-for="(item,key) in channel" :index="item.index">{{item.title}}</el-menu-item>
+					</el-submenu>
 				</el-menu>
 			</div>			
 		</el-col>
@@ -24,8 +28,19 @@
 		},
 		data() {
 			return {
-				activeIndex: '0'
+				activeIndex: '1',
+				screenWidth: true
 			}
+		},
+		mounted() {
+			window.onresize = () => {
+				this.screenWidth >= 768 ? true : false;
+			}
+		},
+		computed:{			
+			/* leftNavItems: function() {
+				return this.screenWidth >= 768 ? true : false;
+			} */
 		}
 	}
 </script>
@@ -33,20 +48,12 @@
 <style lang="stylus" scoped>	
 	@import '../assets/stylus/var.styl'
 	.topbar
-		display flex		
-		justify-content start
-		align-items center
-	.topbar-logo			
-		height 50px
-		width 50px
-		margin-right 4%
-		.logo
-			display block			
-			img
-				width 100%
-				height 100%						
+	.topbar-logo
+		.logoimg
+			height 50px
+			width 50px						
 	.el-dropdown-menu,.el-menu
-		background-color navBgColor
+		background-color $navBgColor
 	.el-menu-topnav.el-menu--horizontal
 		border-bottom-color #2c333c		
 		.el-menu-item
@@ -59,10 +66,10 @@
 			min-width: 68px;
 			text-align: center;
 		.el-menu-item.is-active
-			border-bottom-color navBorderColor
-			color navColor		
+			border-bottom-color $navBorderColor
+			color $navColor		
 		.el-menu-item:not(.is-disabled):focus, 
 		.el-menu-item:not(.is-disabled):hover
-			color navBorderColor
+			color $navBorderColor
 			background-color transparent
 </style>
