@@ -1,63 +1,52 @@
 <template>
-	<el-container>
-		
+	<el-container>		
 		<el-header>
 			<Nav :channel="channel" />
 		</el-header>
 		<el-main>
-			<Jumbotron />
-			<div class="container">	
-				<div class="mb24" v-for="(item,index) in channel" :key="index" >
-					<NavCard :cardtitle="item.title" />
-				</div>				
-			</div>
+			<router-view />
 		</el-main>
 		<el-footer>
 				本站收录的网站或发布的内容若侵害到您的利益，请联系删除处理！| Email：fxg971123@gmail.com 请注明来意！<br />
 				Copyright &copy; 2021 老乌龟导航资源网					
 		</el-footer>		
 		<el-backtop></el-backtop>
-	</el-container>
+	</el-container>	
 </template>
 
 <script>
 	import Nav from './components/Nav.vue'
-	import Jumbotron from './components/Jumbotron.vue'
-	import NavCard from './components/NavCard.vue'
-
-	export default {
-		name: 'App',
-		components: {
-			Nav,
-			Jumbotron,
-			NavCard
+	export default{
+		name:"App",
+		components:{
+			Nav
 		},
-		data() {
-			return {
+		data(){
+			return{
 				channel: [
 					{
 						title: '技术手册',
-						index: '1'
+						url: '/list/:sikll'
 					},
 					{
 						title: '影视导航',
-						index: '2'
+						url: '/list/:move'
 					},
 					{
 						title: '资源搜索',
-						index: '3'
+						url: '/list/:assets'
 					},
 					{
 						title: '设计导航',
-						index: '4'
+						url: '/list/:design'
 					},
 					{
 						title: '软件工具',
-						index: '5'
+						url: '/list/:tool'
 					},
 					{
 						title: '好用网站',
-						index: '6'
+						url: '/list/:site'
 					}
 				]
 			}
@@ -97,3 +86,4 @@
 		line-height: 44px;
 	
 </style>
+

@@ -1,6 +1,34 @@
 <template>
-	<div class="jumbotron">		
-		<div class="banner-wrap scenes-ready">
+	<div class="jumbotron">
+		<div class="soFormContainer">
+		<div class="soInner">
+		<ul class="soTypeTab">
+		<li id="76" class=""><a href="javascript:;">站内</a></li>
+		<li id="102" class=""><a href="javascript:;">搜索</a></li>
+		<li id="99" class="selected"><a href="javascript:;">影视</a></li>
+		<li id="100" class=""><a href="javascript:;">网盘</a></li>
+		<li id="101" class=""><a href="javascript:;">磁力</a></li>
+		<li id="94" class=""><a href="javascript:;">小说</a></li>
+		</ul>
+		<div class="soForm">
+		<form method="post" action="https://www.3zcs.com/So/go/" target="_blank">
+		<input id="soAutoTip" type="hidden" autocomplete="off">
+		<input id="souId" name="souId" type="hidden" value="45">
+		<div class="soOuter"><div class="input">
+		<input type="text" id="soInput" name="soInput" value="" incolor="#555" outcolor="#aaa" sotype="2" autocomplete="off" _soinput="独特的记忆功能，提升你的效率~^_^" style="color: rgb(170, 170, 170);">
+		</div></div>
+		<div class="subBtn"><a id="soSubmit" href="javascript:;"></a></div>
+		</form>
+		</div>
+		<ul class="soItems">
+		<li class=""><a urlid="45" href="javascript:;">电影天堂</a></li>
+		<li class=""><a urlid="102" href="javascript:;">电影狗</a></li>
+		<li class="selected"><a urlid="44" href="javascript:;">茶杯狐</a></li>
+		<li><a urlid="46" href="javascript:;">一站搜</a></li>
+		</ul>
+		</div>
+		</div>
+		<div class="banner-wrap scenes-ready">			
 			<div id="stage">
 				<div class="space"></div>
 				<div class="mountains">
